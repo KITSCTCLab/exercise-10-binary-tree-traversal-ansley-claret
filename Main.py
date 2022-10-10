@@ -11,19 +11,36 @@ def insert(root, new_value) -> BinaryTreeNode:
         If tree is not empty and if new_value is >= value of data in root, add it to right subtree and proceed recursively.
         Finally, return the root.
         """
-    # Write your code here
+    if root == None:
+        return BinaryTreeNode(new_value)
+    else:
+        if root != none and new_value < root.data:
+            root.self.right_child = insert(self.right_child, new_value)
+        elif: root!= none and new_value >= root.data:
+            root.self.left_child = insert(root.self.left_child, new_value)
+    return root    
 
 
 def inorder(root) -> None:
-    # Write your code here
+    if root:
+        print(root.data, end=' ')
+        preorder(root.left)
+        preorder(root.right)
+        
 
 
 def preorder(root) -> None:
-    # Write your code here
+     if root:
+        print(root.data, end=' ')
+        preorder(root.left)
+        preorder(root.right)
 
 
 def postorder(root) -> None:
-    # Write your code here
+     if root:
+        postorder(root.left)
+        postorder(root.right)
+        print(root.data, end = ' ')
 
 
 # Do not change the following code
