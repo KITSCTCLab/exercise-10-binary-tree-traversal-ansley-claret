@@ -1,8 +1,8 @@
 class BinaryTreeNode:
     def __init__(self, data):
         self.data = data
-        self.left_child = None
-        self.right_child = None
+        self.left = None
+        self.right = None
 
 
 def insert(root, new_value) -> BinaryTreeNode:
@@ -12,19 +12,37 @@ def insert(root, new_value) -> BinaryTreeNode:
         Finally, return the root.
         """
     # Write your code here
+    if root == None:
+        root = BinaryTreeNode(new_value)
+    elif new_value < root.data:
+        root.left = insert(root.left,new_value)
+    else:
+        root.right = insert(root.right,new_value)
+    return root
 
 
 def inorder(root) -> None:
     # Write your code here
+    if root:
+        inorder(root.left)
+        print(root.data, end =' ')
+        inorder(root.right)
 
 
 def preorder(root) -> None:
     # Write your code here
+    if root:
+        print(root.data, end=' ')
+        preorder(root.left)
+        preorder(root.right)
 
 
 def postorder(root) -> None:
     # Write your code here
-
+    if root:
+        postorder(root.left)
+        postorder(root.right)
+        print(root.data, end = ' ')
 
 # Do not change the following code
 input_data = input()
