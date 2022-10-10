@@ -22,8 +22,8 @@ def insert(root, new_value) -> BinaryTreeNode:
 
 def inorder(root) -> None:
     if root:
-        print(root.data, end=' ')
         inorder(root.left)
+        print(root.data, end =' ')
         inorder(root.right)
         
 
